@@ -1,15 +1,22 @@
 import React from 'react';
 
 const Box = (props) => {
+  let result = "";
+
+  if (
+    props.title === "Computer" &&
+    props.result !== "tie" &&
+    props.result !== ""
+  ) {
+    result = props.result; // Assigning the result based on the condition.
+  }
+
   return (
-    <div className="box">
-        <h1>{props.title}</h1>
-      <img 
-        className="item-img" 
-        src="https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/c578d42d-0cc3-4f72-8035-4d57dd9a24de/a0b37cf1-b8a9-4e83-bf4f-889864692138.png" 
-        alt="Box Image" 
-      />
-      <h2>Win</h2>
+    <div className={`box ${result}`}>
+      <h1>{props.title}</h1>
+      <h2>{props.item && props.item.name}</h2>
+      <img className="item-img" src={props.item ? props.item.img : ""} alt={props.item ? props.item.name : "Item"} />
+      <h2>{result}</h2>
     </div>
   );
 }
