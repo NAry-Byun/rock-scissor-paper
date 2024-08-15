@@ -1,13 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";  
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AppClass from './AppClass';
 
+// Create a root container and render the AppClass component
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <AppClass />
   </React.StrictMode>
 );
 
